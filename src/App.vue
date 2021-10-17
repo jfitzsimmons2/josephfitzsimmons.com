@@ -7,13 +7,16 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <div class="hero">
     <div class="video-container">
-      <video class="video" autoplay loop>
+      <video class="video" autoplay loop muted>
         <source src="./assets/video/sunset.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
     <div class="hero-content-container">
       <h1>Joseph Fitzsimmons</h1>
+      <p>You can call me Joe. ☕️ </p>
+      <p>I'm a front-end engineer who works with Vue.</p>
+      <p>This is my site where I share what's on my mind.</p>
     </div>
   </div>
 </template>
@@ -33,6 +36,8 @@ html {
 body {
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 h1,
@@ -49,8 +54,8 @@ h6 {
 .hero {
   display: flex;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
+  max-width: 960px;
+  margin-top: 4rem;
 }
 
 .hero-content-container {
