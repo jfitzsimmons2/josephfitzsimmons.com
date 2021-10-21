@@ -1,7 +1,9 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import SideNav from './components/SideNav.vue'
+import menu from "./data/menu";
+
 </script>
 
 <template>
@@ -12,13 +14,14 @@ import HelloWorld from './components/HelloWorld.vue'
         Your browser does not support the video tag.
       </video>
     </div>
-    <div class="hero-content-container">
+    <!-- <div class="hero-content-container">
       <h1>Joseph Fitzsimmons</h1>
       <p>You can call me Joe. ☕️ </p>
       <p>I'm a front-end engineer who works with Vue.</p>
       <p>This is my site where I share what's on my mind.</p>
-    </div>
+    </div> -->
   </div>
+  <SideNav :menu="menu.items"></SideNav>
 </template>
 
 <style>
