@@ -7,13 +7,19 @@ import menu from "./data/menu";
 
 <template>
   <div class="container">
-    <div class="video-container">
-      <video class="video" autoplay loop muted>
-        <source src="./assets/video/sunset.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <div
+      class="flex align-center"
+      style="
+        border: 2px dashed lightblue;
+        padding: 0 1rem;
+        background: rgba(0, 0, 0, 0.25);
+        margin-bottom: 2rem;
+      "
+    >
+      <img src="./assets/images/Torch.gif" />
+      <h1 class="text-center">Welcome to the website of Joseph Fitzsimmons</h1>
+      <img src="./assets/images/Torch.gif" />
     </div>
-    <h1 class="text-center">Welcome to the website of Joseph Fitzsimmons</h1>
     <div style="display: flex; align-items: flex-start; width: 100%">
       <img src="./assets/images/subzero_from_mortal_kombat.gif" />
 
@@ -30,6 +36,12 @@ import menu from "./data/menu";
         </p>
       </div>
       <img src="./assets/images/REP_MOVE.gif" />
+    </div>
+    <div class="video-container">
+      <video class="video" autoplay loop muted>
+        <source src="./assets/video/sunset.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
     <hr />
     <div style="display: flex; align-items: center">
@@ -65,7 +77,7 @@ import menu from "./data/menu";
         </div>
       </div>
     </div>
-    <hr />
+
     <marquee
       >More stuff coming soon........ Check back often......... Site updated
       weekly........ More stuff coming soon........ Check back often.........
@@ -76,7 +88,7 @@ import menu from "./data/menu";
       stuff coming soon........ Check back often......... Site updated
       weekly........
     </marquee>
-    <hr />
+
     <div
       style="
         display: flex;
@@ -96,7 +108,18 @@ import menu from "./data/menu";
 </template>
 
 <style>
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
 marquee {
+  margin: 2rem 0;
+  border-top: 2px dashed red;
+  border-bottom: 2px dashed red;
+  padding: 1rem 0;
   color: lime;
 }
 :root {
@@ -136,11 +159,10 @@ html {
 }
 
 body {
-  padding: 0;
+  padding: 4rem 0;
   margin: 0;
   display: flex;
   justify-content: center;
-  padding-bottom: 4rem;
 }
 
 h1,
@@ -149,32 +171,16 @@ h3,
 h4,
 h5,
 h6 {
+  display: block;
   font-style: normal;
   font-weight: 900;
   font-size: 1rem;
 }
-/*
+
 .text-center {
   text-align: center;
-}
-
-.hero {
-  display: flex;
-  align-items: center;
-  max-width: 960px;
-  margin-top: 4rem;
-}
-
-.hero-content-container {
-  padding-left: 1rem;
-}
-*/
-.video-container {
-  /* width: 900px;
-  flex: 0 1 900px;
-  padding-top: 75%;
-  height: 0px;
-  position: relative; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .video {
@@ -182,9 +188,6 @@ h6 {
   width: 100%;
   height: 100%;
   transition: opacity 0.5s;
-  /* position: absolute;
-  top: 0;
-  left: 0; */
 }
 
 .video:hover {
