@@ -66,6 +66,17 @@ import menu from "./data/menu";
       </div>
     </div>
     <hr />
+    <marquee
+      >More stuff coming soon........ Check back often......... Site updated
+      weekly........ More stuff coming soon........ Check back often.........
+      Site updated weekly........ More stuff coming soon........ Check back
+      often......... Site updated weekly........ More stuff coming soon........
+      Check back often......... Site updated weekly........ More stuff coming
+      soon........ Check back often......... Site updated weekly........ More
+      stuff coming soon........ Check back often......... Site updated
+      weekly........
+    </marquee>
+    <hr />
     <div
       style="
         display: flex;
