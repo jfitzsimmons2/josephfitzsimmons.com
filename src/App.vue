@@ -96,6 +96,9 @@ import menu from "./data/menu";
 </template>
 
 <style>
+marquee {
+  color: lime;
+}
 :root {
   --global-font-size: 15px;
   --global-line-height: 1.4em;
