@@ -1,22 +1,45 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref } from "vue";
 
-const filterVals = reactive({
+const filterVals = reactive<{
+  blur: number;
+  contrast: number;
+  hueRotate: number;
+}>({
   blur: 0,
   contrast: 100,
   hueRotate: 0,
 });
 
 const showControls = ref(false);
+const play = ref(true);
+const interval = ref();
+const sunsetVid = ref();
 
-onMounted(() => {
-  setInterval(() => {
+const playPause = () => {
+  if (play.value) {
+    clearInterval(interval.value);
+    sunsetVid.value.pause();
+  } else {
+    startTimer();
+    sunsetVid.value.play();
+  }
+
+  play.value = !play.value;
+};
+
+const startTimer = () => {
+  interval.value = setInterval(() => {
     if (filterVals.hueRotate !== 360) {
       filterVals.hueRotate += 1;
     } else {
       filterVals.hueRotate = 0;
     }
   }, 100);
+};
+
+onMounted(() => {
+  startTimer();
 });
 </script>
 
@@ -56,12 +79,15 @@ onMounted(() => {
       <button @click="showControls = !showControls" class="btn btn-primary">
         Show Controls
       </button>
+      <button @click="playPause" class="btn btn-secondary">
+        {{ play ? "Pause" : "Play" }}
+      </button>
       <div v-if="showControls" class="ba b--dotted bw3 b--yellow pa3">
         Blur: {{ filterVals.blur }}px // Contrast: {{ filterVals.contrast }}% //
         Hue Rotate: {{ filterVals.hueRotate }}deg
         <input
           type="range"
-          v-model="filterVals.blur"
+          v-model.number="filterVals.blur"
           min="0"
           max="100"
           style="width: 100%"
@@ -70,16 +96,16 @@ onMounted(() => {
           type="range"
           min="0"
           max="200"
-          v-model="filterVals.contrast"
+          v-model.number="filterVals.contrast"
           style="width: 100%"
         />
         <input
           type="range"
-          v-model="filterVals.hueRotate"
+          v-model.number="filterVals.hueRotate"
           min="0"
           max="360"
           style="width: 100%"
-          disabled
+          :disabled="play"
         />
       </div>
     </div>
@@ -87,6 +113,7 @@ onMounted(() => {
     <div class="video-container">
       <video
         class="video"
+        ref="sunsetVid"
         autoplay
         loop
         muted
