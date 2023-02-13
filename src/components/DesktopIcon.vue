@@ -17,7 +17,7 @@ const props = defineProps<{
 	operation?: Function;
 }>();
 
-const imgSrc = computed(() => new URL(`../src/assets/${props.icon}`));
+const imgSrc = computed(() => new URL(`../assets/${props.icon}`, import.meta.url).href);
 onMounted(() => {
 	icon.value.addEventListener('click', (event: MouseEvent) => {
 		icon.value.classList.add('focused');
