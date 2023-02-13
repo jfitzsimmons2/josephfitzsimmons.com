@@ -12,16 +12,16 @@
 				</div>
 				<div class="start-menu__main-menu">
 					<button class="start-menu__main-menu__menu-item">
-						<img src="../assets/settings_gear-3.png" /> <span>Settings</span>
+						<img src="../assets/settings_gear-3.png" /> <span>These don't work</span>
 					</button>
 					<button class="start-menu__main-menu__menu-item">
-						<img src="../assets/settings_gear-3.png" /> <span>Settings</span>
+						<img src="../assets/settings_gear-3.png" /> <span>yet...</span>
 					</button>
 					<button class="start-menu__main-menu__menu-item">
-						<img src="../assets/settings_gear-3.png" /> <span>Settings</span>
+						<img src="../assets/settings_gear-3.png" /> <span>I am working on it</span>
 					</button>
 					<button class="start-menu__main-menu__menu-item">
-						<img src="../assets/settings_gear-3.png" /> <span>Settings</span>
+						<img src="../assets/settings_gear-3.png" /> <span>Stay tuned</span>
 					</button>
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { onClickOutside } from '@vueuse/core'
 
 const startOpen = ref(false);
@@ -40,7 +40,6 @@ onClickOutside(startMenu, () => startOpen.value = false)
 const date = ref(new Date());
 const formattedDate = computed(() => date.value.toLocaleTimeString());
 onMounted(() => setInterval(() => date.value = new Date(), 1000));
-
 
 </script>
 
