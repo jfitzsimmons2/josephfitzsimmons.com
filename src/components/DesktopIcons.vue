@@ -1,7 +1,6 @@
 <template>
 	<div class="desktop-grid">
-		<DesktopIcon icon="html-5.png" title="josephfitzsimmons.dev"
-			:operation="goToUrl('https://www.joefitzsimmons.dev')" />
+		<DesktopIcon icon="html-5.png" title="joefitzsimmons.dev" :operation="goToUrl('https://www.joefitzsimmons.dev')" />
 		<DesktopIcon icon="computer_explorer_cool-0.png" title="My Computer"
 			:operation="() => $emit('open-window', 'about')" />
 		<DesktopIcon icon="directory_closed-5.png" title="Midjourney"
